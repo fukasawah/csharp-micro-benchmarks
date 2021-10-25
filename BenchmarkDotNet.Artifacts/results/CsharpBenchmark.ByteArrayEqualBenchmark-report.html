@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>CsharpBenchmark.ByteArrayEqualBenchmark-20211018-195116</title>
+<title>CsharpBenchmark.ByteArrayEqualBenchmark-20211026-033218</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,40 +22,48 @@ Intel Core i7-8565U CPU 1.80GHz (Whiskey Lake), 1 CPU, 8 logical and 4 physical 
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>                    Method</th><th>TestData</th><th>       Mean</th><th>     Error</th><th>    StdDev</th>
+<thead><tr><th>                    Method</th><th> TestData</th><th>          Mean</th><th>      Error</th><th>     StdDev</th><th>        Median</th>
 </tr>
-</thead><tbody><tr><td>StructuralEqualityComparerEquals</td><td>Byte[1024]</td><td>99,732.48 ns</td><td>1,481.524 ns</td><td>1,385.818 ns</td>
-</tr><tr><td>SequenceEqual</td><td>Byte[1024]</td><td>6,091.01 ns</td><td>92.471 ns</td><td>86.497 ns</td>
-</tr><tr><td>SimpleCompare</td><td>Byte[1024]</td><td>586.48 ns</td><td>9.569 ns</td><td>8.951 ns</td>
-</tr><tr><td>SpanSequenceEqual</td><td>Byte[1024]</td><td>96.05 ns</td><td>0.835 ns</td><td>0.781 ns</td>
-</tr><tr><td>MultiTaskCompare</td><td>Byte[1024]</td><td>6,438.75 ns</td><td>64.357 ns</td><td>60.199 ns</td>
-</tr><tr><td>ArrayCompare32</td><td>Byte[1024]</td><td>185.96 ns</td><td>2.171 ns</td><td>1.813 ns</td>
-</tr><tr><td>ArrayCompare64</td><td>Byte[1024]</td><td>135.90 ns</td><td>1.798 ns</td><td>1.765 ns</td>
-</tr><tr><td>MemCmp</td><td>Byte[1024]</td><td>119.52 ns</td><td>1.311 ns</td><td>1.162 ns</td>
-</tr><tr><td>StructuralEqualityComparerEquals</td><td>Byte[1048575]</td><td>112,932,348.57 ns</td><td>954,909.489 ns</td><td>846,502.389 ns</td>
-</tr><tr><td>SequenceEqual</td><td>Byte[1048575]</td><td>6,366,387.78 ns</td><td>117,536.055 ns</td><td>104,192.652 ns</td>
-</tr><tr><td>SimpleCompare</td><td>Byte[1048575]</td><td>677,000.18 ns</td><td>8,469.303 ns</td><td>7,922.191 ns</td>
-</tr><tr><td>SpanSequenceEqual</td><td>Byte[1048575]</td><td>175,290.30 ns</td><td>3,449.946 ns</td><td>6,809.857 ns</td>
-</tr><tr><td>MultiTaskCompare</td><td>Byte[1048575]</td><td>204,758.80 ns</td><td>3,269.159 ns</td><td>4,992.351 ns</td>
-</tr><tr><td>ArrayCompare32</td><td>Byte[1048575]</td><td>256,591.36 ns</td><td>4,400.901 ns</td><td>4,519.401 ns</td>
-</tr><tr><td>ArrayCompare64</td><td>Byte[1048575]</td><td>201,876.98 ns</td><td>3,223.374 ns</td><td>3,015.146 ns</td>
-</tr><tr><td>MemCmp</td><td>Byte[1048575]</td><td>191,929.50 ns</td><td>3,808.798 ns</td><td>5,213.526 ns</td>
-</tr><tr><td>StructuralEqualityComparerEquals</td><td>Byte[1048576]</td><td>114,841,664.62 ns</td><td>1,522,188.919 ns</td><td>1,271,096.688 ns</td>
-</tr><tr><td>SequenceEqual</td><td>Byte[1048576]</td><td>6,623,190.35 ns</td><td>47,652.643 ns</td><td>42,242.827 ns</td>
-</tr><tr><td>SimpleCompare</td><td>Byte[1048576]</td><td>700,016.22 ns</td><td>5,987.405 ns</td><td>4,999.754 ns</td>
-</tr><tr><td>SpanSequenceEqual</td><td>Byte[1048576]</td><td>178,076.45 ns</td><td>3,475.050 ns</td><td>3,862.509 ns</td>
-</tr><tr><td>MultiTaskCompare</td><td>Byte[1048576]</td><td>206,830.56 ns</td><td>4,086.425 ns</td><td>4,864.598 ns</td>
-</tr><tr><td>ArrayCompare32</td><td>Byte[1048576]</td><td>258,189.56 ns</td><td>4,724.524 ns</td><td>5,802.140 ns</td>
-</tr><tr><td>ArrayCompare64</td><td>Byte[1048576]</td><td>202,681.13 ns</td><td>4,040.556 ns</td><td>4,491.067 ns</td>
-</tr><tr><td>MemCmp</td><td>Byte[1048576]</td><td>195,249.87 ns</td><td>3,060.142 ns</td><td>2,862.459 ns</td>
-</tr><tr><td>StructuralEqualityComparerEquals</td><td>Byte[16]</td><td>1,858.33 ns</td><td>34.321 ns</td><td>61.887 ns</td>
-</tr><tr><td>SequenceEqual</td><td>Byte[16]</td><td>180.63 ns</td><td>1.020 ns</td><td>0.852 ns</td>
-</tr><tr><td>SimpleCompare</td><td>Byte[16]</td><td>32.19 ns</td><td>0.390 ns</td><td>0.365 ns</td>
-</tr><tr><td>SpanSequenceEqual</td><td>Byte[16]</td><td>25.51 ns</td><td>0.159 ns</td><td>0.141 ns</td>
-</tr><tr><td>MultiTaskCompare</td><td>Byte[16]</td><td>7,147.20 ns</td><td>111.951 ns</td><td>104.719 ns</td>
-</tr><tr><td>ArrayCompare32</td><td>Byte[16]</td><td>26.22 ns</td><td>0.174 ns</td><td>0.163 ns</td>
-</tr><tr><td>ArrayCompare64</td><td>Byte[16]</td><td>25.24 ns</td><td>0.185 ns</td><td>0.173 ns</td>
-</tr><tr><td>MemCmp</td><td>Byte[16]</td><td>30.49 ns</td><td>0.239 ns</td><td>0.224 ns</td>
+</thead><tbody><tr><td>StructuralEqualityComparerEquals</td><td>Byte[1024]</td><td>103,824.48 ns</td><td>2,036.869 ns</td><td>2,000.478 ns</td><td>103,089.92 ns</td>
+</tr><tr><td>SequenceEqual</td><td>Byte[1024]</td><td>6,256.96 ns</td><td>62.058 ns</td><td>55.013 ns</td><td>6,266.41 ns</td>
+</tr><tr><td>SimpleCompare</td><td>Byte[1024]</td><td>600.54 ns</td><td>9.548 ns</td><td>8.931 ns</td><td>603.72 ns</td>
+</tr><tr><td>SpanSequenceEqual</td><td>Byte[1024]</td><td>97.52 ns</td><td>1.552 ns</td><td>2.225 ns</td><td>97.21 ns</td>
+</tr><tr><td>MultiTaskCompare</td><td>Byte[1024]</td><td>13,443.64 ns</td><td>171.417 ns</td><td>160.344 ns</td><td>13,489.51 ns</td>
+</tr><tr><td>ArrayCompare32</td><td>Byte[1024]</td><td>200.76 ns</td><td>4.041 ns</td><td>9.605 ns</td><td>196.69 ns</td>
+</tr><tr><td>ArrayCompare64</td><td>Byte[1024]</td><td>138.57 ns</td><td>1.160 ns</td><td>0.969 ns</td><td>138.60 ns</td>
+</tr><tr><td>MemCmp</td><td>Byte[1024]</td><td>119.48 ns</td><td>2.384 ns</td><td>2.839 ns</td><td>119.46 ns</td>
+</tr><tr><td>StructuralEqualityComparerEquals</td><td>Byte[1048575]</td><td>108,380,618.67 ns</td><td>1,150,894.783 ns</td><td>1,076,547.694 ns</td><td>108,394,760.00 ns</td>
+</tr><tr><td>SequenceEqual</td><td>Byte[1048575]</td><td>6,363,528.35 ns</td><td>77,338.832 ns</td><td>68,558.860 ns</td><td>6,364,174.61 ns</td>
+</tr><tr><td>SimpleCompare</td><td>Byte[1048575]</td><td>679,806.70 ns</td><td>8,475.727 ns</td><td>7,928.201 ns</td><td>681,782.91 ns</td>
+</tr><tr><td>SpanSequenceEqual</td><td>Byte[1048575]</td><td>174,003.90 ns</td><td>3,457.742 ns</td><td>6,744.060 ns</td><td>173,218.51 ns</td>
+</tr><tr><td>MultiTaskCompare</td><td>Byte[1048575]</td><td>204,064.99 ns</td><td>3,100.256 ns</td><td>2,588.854 ns</td><td>203,645.78 ns</td>
+</tr><tr><td>ArrayCompare32</td><td>Byte[1048575]</td><td>247,386.57 ns</td><td>4,673.774 ns</td><td>5,194.888 ns</td><td>248,315.62 ns</td>
+</tr><tr><td>ArrayCompare64</td><td>Byte[1048575]</td><td>197,532.89 ns</td><td>3,934.935 ns</td><td>5,643.366 ns</td><td>197,665.50 ns</td>
+</tr><tr><td>MemCmp</td><td>Byte[1048575]</td><td>200,833.15 ns</td><td>10,170.339 ns</td><td>28,181.962 ns</td><td>190,308.74 ns</td>
+</tr><tr><td>StructuralEqualityComparerEquals</td><td>Byte[1048576]</td><td>108,498,673.33 ns</td><td>979,775.388 ns</td><td>916,482.506 ns</td><td>108,489,980.00 ns</td>
+</tr><tr><td>SequenceEqual</td><td>Byte[1048576]</td><td>6,407,282.99 ns</td><td>52,752.418 ns</td><td>44,050.658 ns</td><td>6,388,628.12 ns</td>
+</tr><tr><td>SimpleCompare</td><td>Byte[1048576]</td><td>687,527.76 ns</td><td>8,050.289 ns</td><td>7,530.245 ns</td><td>687,771.68 ns</td>
+</tr><tr><td>SpanSequenceEqual</td><td>Byte[1048576]</td><td>176,101.52 ns</td><td>3,480.392 ns</td><td>5,209.286 ns</td><td>176,307.90 ns</td>
+</tr><tr><td>MultiTaskCompare</td><td>Byte[1048576]</td><td>206,742.06 ns</td><td>2,938.385 ns</td><td>2,748.567 ns</td><td>206,631.57 ns</td>
+</tr><tr><td>ArrayCompare32</td><td>Byte[1048576]</td><td>250,372.59 ns</td><td>4,787.340 ns</td><td>4,478.081 ns</td><td>251,726.32 ns</td>
+</tr><tr><td>ArrayCompare64</td><td>Byte[1048576]</td><td>195,164.65 ns</td><td>3,759.878 ns</td><td>5,511.180 ns</td><td>195,841.38 ns</td>
+</tr><tr><td>MemCmp</td><td>Byte[1048576]</td><td>193,794.15 ns</td><td>3,815.852 ns</td><td>6,269.554 ns</td><td>192,987.73 ns</td>
+</tr><tr><td>StructuralEqualityComparerEquals</td><td>Byte[134217728]</td><td>14,625,289,784.62 ns</td><td>75,694,667.582 ns</td><td>63,208,475.660 ns</td><td>14,606,151,200.00 ns</td>
+</tr><tr><td>SequenceEqual</td><td>Byte[134217728]</td><td>835,892,753.33 ns</td><td>7,784,221.304 ns</td><td>7,281,365.437 ns</td><td>833,311,000.00 ns</td>
+</tr><tr><td>SimpleCompare</td><td>Byte[134217728]</td><td>120,854,436.00 ns</td><td>1,921,895.955 ns</td><td>1,797,742.669 ns</td><td>120,424,780.00 ns</td>
+</tr><tr><td>SpanSequenceEqual</td><td>Byte[134217728]</td><td>63,132,158.33 ns</td><td>698,865.243 ns</td><td>653,718.982 ns</td><td>63,080,225.00 ns</td>
+</tr><tr><td>MultiTaskCompare</td><td>Byte[134217728]</td><td>64,996,656.25 ns</td><td>1,237,082.460 ns</td><td>1,214,980.388 ns</td><td>64,942,061.11 ns</td>
+</tr><tr><td>ArrayCompare32</td><td>Byte[134217728]</td><td>67,619,060.94 ns</td><td>1,308,127.802 ns</td><td>1,284,756.413 ns</td><td>67,364,518.75 ns</td>
+</tr><tr><td>ArrayCompare64</td><td>Byte[134217728]</td><td>64,572,005.77 ns</td><td>815,411.465 ns</td><td>680,905.504 ns</td><td>64,569,587.50 ns</td>
+</tr><tr><td>MemCmp</td><td>Byte[134217728]</td><td>64,282,324.76 ns</td><td>1,063,560.254 ns</td><td>994,854.922 ns</td><td>64,372,885.71 ns</td>
+</tr><tr><td>StructuralEqualityComparerEquals</td><td>Byte[16]</td><td>1,766.25 ns</td><td>19.334 ns</td><td>18.085 ns</td><td>1,761.45 ns</td>
+</tr><tr><td>SequenceEqual</td><td>Byte[16]</td><td>174.44 ns</td><td>2.369 ns</td><td>4.086 ns</td><td>173.02 ns</td>
+</tr><tr><td>SimpleCompare</td><td>Byte[16]</td><td>31.24 ns</td><td>0.654 ns</td><td>0.671 ns</td><td>31.18 ns</td>
+</tr><tr><td>SpanSequenceEqual</td><td>Byte[16]</td><td>24.86 ns</td><td>0.277 ns</td><td>0.259 ns</td><td>24.85 ns</td>
+</tr><tr><td>MultiTaskCompare</td><td>Byte[16]</td><td>13,493.23 ns</td><td>197.955 ns</td><td>175.482 ns</td><td>13,530.73 ns</td>
+</tr><tr><td>ArrayCompare32</td><td>Byte[16]</td><td>25.43 ns</td><td>0.184 ns</td><td>0.172 ns</td><td>25.46 ns</td>
+</tr><tr><td>ArrayCompare64</td><td>Byte[16]</td><td>24.75 ns</td><td>0.285 ns</td><td>0.266 ns</td><td>24.79 ns</td>
+</tr><tr><td>MemCmp</td><td>Byte[16]</td><td>30.99 ns</td><td>0.469 ns</td><td>0.392 ns</td><td>30.92 ns</td>
 </tr></tbody></table>
 </body>
 </html>

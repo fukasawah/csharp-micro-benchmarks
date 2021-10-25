@@ -59,6 +59,8 @@ namespace CsharpBenchmark
                 new byte[1024],
                 new byte[1024*1024 - 1],
                 new byte[1024*1024],
+                new byte[1024*1024*128],
+                //new byte[1024*1024*512],
             };
 
             foreach (byte[] b in bytes)
@@ -73,16 +75,6 @@ namespace CsharpBenchmark
             Array.Copy(source, b, source.Length);
             return b;
         }
-
-
-        // [Benchmark]
-        // public bool ArrayEquals()
-        // {
-        //     var b = new byte[TestData.Length];
-        //     Array.Copy(TestData, b, TestData.Length);
-
-        //     return Array.Equals(TestData, b);
-        // }
 
         [Benchmark]
         public bool StructuralEqualityComparerEquals()
@@ -161,7 +153,7 @@ namespace CsharpBenchmark
 
             return true;
         }
-        
+
 
         public static bool SequenceEqual<T>(Span<T> a, Span<T> b) where T : IEquatable<T>
         {
@@ -190,7 +182,7 @@ namespace CsharpBenchmark
                 return false;
             }
 
-            int N = 8;
+            int N = Environment.ProcessorCount * 2;
             int NL = a.Length / N;
             if (NL == 0)
             {
@@ -198,12 +190,24 @@ namespace CsharpBenchmark
             }
             Task<bool>[] tasks = new Task<bool>[N];
 
+            Func<int, int, Task<bool>> createTask = (start, length) =>
+            {
+                return Task.Run<bool>(() => SequenceEqual(a.AsSpan(start, length), b.AsSpan(start, length)));
+            };
+
             for (int i = 0; i < N - 1; ++i)
             {
-                tasks[i] = Task.Run<bool>(() => SequenceEqual(a.AsSpan(i * NL, NL), b.AsSpan(i * NL, NL)));
+                tasks[i] = createTask(i * NL, NL);
             }
-            
-            tasks[N - 1] = Task.Run<bool>(() => SequenceEqual(a.AsSpan((N - 1) * NL), b.AsSpan((N - 1) * NL)));
+
+            if (a.Length % N == 0)
+            {
+                tasks[N - 1] = createTask((N - 1) * NL, NL);
+            }
+            else
+            {
+                tasks[N - 1] = createTask((N - 1) * NL, NL + a.Length % N);
+            }
 
             Task.WaitAll(tasks);
             foreach (var task in tasks)
